@@ -1,0 +1,56 @@
+Both are used in NLP to reduce words to their base form.
+
+But they work differently.
+
+1️⃣ Stemming
+chopping off word endings 
+
+It removes prefixes/suffixes using simple rules.
+It does not care about grammar.
+
+Example
+Original	Stemmed
+running	    run
+studies	    studi
+caring	    care
+better	    better
+
+Notice:
+"studies" → "studi" (not a real word)
+
+That’s because stemming is mechanical
+--------------------------------------
+Popular Stemming Algorithms
+
+1   Porter Stemmer
+2   Snowball Stemmer
+
+Example:
+from nltk.stem import PorterStemmer
+
+stemmer = PorterStemmer()
+print(stemmer.stem("studies"))
+
+Output: studi
+_________________________________________________________________________________________________________________
+2️⃣ Lemmatization
+converting to real dictionary base form 📖
+
+It understands:
+Grammar
+Context
+POS (Part of Speech)
+
+Example
+Original	Lemma
+running	    run
+studies	    study
+better	    good
+am	        be
+
+Notice:
+
+"studies" → "study" ✅ (real word)
+"better" → "good" ✅ (correct base form)
+
+Much smarter.
